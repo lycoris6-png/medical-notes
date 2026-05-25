@@ -1,0 +1,269 @@
+/* =========================================================
+   ベースカラー（明るめのティール基調）
+   ========================================================= */
+:root {
+  --md-primary-fg-color: #00897b;
+  --md-primary-fg-color--light: #4db6ac;
+  --md-primary-fg-color--dark: #00695c;
+  --md-accent-fg-color: #ff8f00;
+}
+
+/* =========================================================
+   本文タイポ
+   ========================================================= */
+.md-typeset {
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+/* 見出し */
+.md-typeset h1 {
+  color: var(--md-primary-fg-color--dark);
+}
+.md-typeset h2 {
+  border-bottom: 2px solid var(--md-primary-fg-color--light);
+  padding-bottom: 0.2rem;
+}
+.md-typeset h3 {
+  padding-left: 0.55em;
+  border-left: 4px solid var(--md-primary-fg-color);
+}
+
+/* =========================================================
+   表（標準）
+   ========================================================= */
+.md-typeset table:not([class]) {
+  font-size: 0.78rem;
+}
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color--light);
+  color: white;
+}
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: rgba(0, 137, 123, 0.04);
+}
+
+/* admonition を少しソフトに */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.5rem;
+}
+
+/* =========================================================
+   薬効クラス バッジ
+   使い方: <span class="rx rasi">RAS</span> サクビトリル...
+   ========================================================= */
+.rx {
+  display: inline-block;
+  padding: 0.05em 0.55em;
+  margin-right: 0.3em;
+  border-radius: 0.4em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white !important;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+/* 降圧系 */
+.rx.acei      { background-color: #6d28d9; }  /* 紫: ACE-I */
+.rx.arb       { background-color: #7c3aed; }  /* 明紫: ARB */
+.rx.arni      { background-color: #5b21b6; }  /* 濃紫: ARNI */
+.rx.ca-dhp    { background-color: #16a34a; }  /* 緑: DHP */
+.rx.ca-ndhp   { background-color: #0d9488; }  /* 青緑: 非DHP */
+.rx.beta      { background-color: #ea580c; }  /* 橙: β */
+.rx.alpha     { background-color: #a855f7; }  /* 薄紫: α */
+.rx.diuretic  { background-color: #0284c7; }  /* 青: 利尿 */
+.rx.thiazide  { background-color: #38bdf8; }  /* 明青: サイアザイド */
+.rx.loop      { background-color: #0369a1; }  /* 濃青: ループ */
+.rx.mra       { background-color: #ca8a04; }  /* 山吹: MRA */
+.rx.sglt2     { background-color: #db2777; }  /* 桃: SGLT2 */
+.rx.central   { background-color: #6b7280; }  /* 灰: 中枢性 */
+.rx.vasodil   { background-color: #14b8a6; }  /* 緑青: 血管拡張 */
+.rx.ivabra    { background-color: #be185d; }  /* If channel */
+.rx.statin    { background-color: #f59e0b; }  /* 黄橙 */
+
+/* Vaughan-Williams */
+.rx.vw-ia   { background-color: #1e40af; }  /* 濃青 */
+.rx.vw-ib   { background-color: #2563eb; }  /* 青 */
+.rx.vw-ic   { background-color: #60a5fa; color: #0c1f4b !important; } /* 明青 */
+.rx.vw-ii   { background-color: #ea580c; }  /* 橙 */
+.rx.vw-iii  { background-color: #15803d; }  /* 緑 */
+.rx.vw-iv   { background-color: #0d9488; }  /* 青緑 */
+.rx.vw-other { background-color: #6b7280; } /* その他 */
+
+/* 抗血栓 */
+.rx.doac      { background-color: #b91c1c; }  /* 濃赤: DOAC */
+.rx.warfarin  { background-color: #7f1d1d; }  /* 暗赤: ワルファリン */
+.rx.heparin   { background-color: #be123c; }  /* ヘパリン */
+.rx.antiplt   { background-color: #f43f5e; }  /* 桃赤: 抗血小板 */
+.rx.p2y12     { background-color: #e11d48; }
+.rx.aspirin   { background-color: #fb7185; color: #4a0d1f !important; }
+
+/* 心不全 (Fantastic Four) — それぞれを覚えやすい色に */
+.rx.ff-1 { background-color: #6d28d9; }  /* ARNI/ACE-I/ARB */
+.rx.ff-2 { background-color: #ea580c; }  /* β遮断 */
+.rx.ff-3 { background-color: #ca8a04; }  /* MRA */
+.rx.ff-4 { background-color: #db2777; }  /* SGLT2i */
+
+/* 補助 */
+.rx.danger { background-color: #dc2626; }
+.rx.caution { background-color: #f59e0b; color: #2d1900 !important; }
+.rx.first { background-color: #15803d; }   /* 第一選択 */
+.rx.avoid { background-color: #525252; }
+
+/* =========================================================
+   カスタム admonition: mnemonic（覚え方）
+   ========================================================= */
+:root {
+  --md-admonition-icon--mnemonic: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9c0 2.8 1.3 5.3 3.3 6.9V20c0 1.7 1.3 3 3 3h5.4c1.7 0 3-1.3 3-3v-1.1c2-1.6 3.3-4.1 3.3-6.9a9 9 0 0 0-9-9zm-1 17v-1h2v1h-2z"/></svg>');
+}
+.md-typeset .admonition.mnemonic,
+.md-typeset details.mnemonic {
+  border-color: #7c3aed;
+}
+.md-typeset .mnemonic > .admonition-title,
+.md-typeset .mnemonic > summary {
+  background-color: rgba(124, 58, 237, 0.12);
+}
+.md-typeset .mnemonic > .admonition-title::before,
+.md-typeset .mnemonic > summary::before {
+  background-color: #7c3aed;
+  -webkit-mask-image: var(--md-admonition-icon--mnemonic);
+          mask-image: var(--md-admonition-icon--mnemonic);
+}
+
+/* =========================================================
+   カスタム admonition: pearl（臨床ピール / コツ）
+   ========================================================= */
+:root {
+  --md-admonition-icon--pearl: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11c0 3 1.5 5.6 3.8 7.2L7 22h10l.2-3.8C19.5 16.6 21 14 21 11c0-5-4-9-9-9zm0 4a5 5 0 1 1 0 10A5 5 0 0 1 12 6z"/></svg>');
+}
+.md-typeset .admonition.pearl,
+.md-typeset details.pearl {
+  border-color: #16a34a;
+}
+.md-typeset .pearl > .admonition-title,
+.md-typeset .pearl > summary {
+  background-color: rgba(22, 163, 74, 0.12);
+}
+.md-typeset .pearl > .admonition-title::before,
+.md-typeset .pearl > summary::before {
+  background-color: #16a34a;
+  -webkit-mask-image: var(--md-admonition-icon--pearl);
+          mask-image: var(--md-admonition-icon--pearl);
+}
+
+/* =========================================================
+   カスタム admonition: pitfall（落とし穴・要注意）
+   ========================================================= */
+:root {
+  --md-admonition-icon--pitfall: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2 1 22h22L12 2zm0 5 8.5 15H3.5L12 7zm-1 5v4h2v-4h-2zm0 5v2h2v-2h-2z"/></svg>');
+}
+.md-typeset .admonition.pitfall,
+.md-typeset details.pitfall {
+  border-color: #dc2626;
+}
+.md-typeset .pitfall > .admonition-title,
+.md-typeset .pitfall > summary {
+  background-color: rgba(220, 38, 38, 0.14);
+}
+.md-typeset .pitfall > .admonition-title::before,
+.md-typeset .pitfall > summary::before {
+  background-color: #dc2626;
+  -webkit-mask-image: var(--md-admonition-icon--pitfall);
+          mask-image: var(--md-admonition-icon--pitfall);
+}
+
+/* =========================================================
+   薬剤クラス カード（H3 を色付きカード化）
+   使い方: <h3 class="rx-card rasi">ACE阻害薬</h3>
+   ========================================================= */
+.md-typeset h3.rx-card {
+  border-left: 6px solid #ccc;
+  padding: 0.35em 0.7em;
+  border-radius: 0 0.4em 0.4em 0;
+  margin-top: 1.5em;
+  background-color: rgba(0,0,0,0.03);
+}
+.md-typeset h3.rx-card.acei,
+.md-typeset h3.rx-card.arb,
+.md-typeset h3.rx-card.arni  { border-left-color: #7c3aed; background-color: rgba(124,58,237,0.06); }
+.md-typeset h3.rx-card.ca-dhp,
+.md-typeset h3.rx-card.ca-ndhp { border-left-color: #16a34a; background-color: rgba(22,163,74,0.06); }
+.md-typeset h3.rx-card.beta  { border-left-color: #ea580c; background-color: rgba(234,88,12,0.06); }
+.md-typeset h3.rx-card.alpha { border-left-color: #a855f7; background-color: rgba(168,85,247,0.06); }
+.md-typeset h3.rx-card.diuretic,
+.md-typeset h3.rx-card.thiazide,
+.md-typeset h3.rx-card.loop  { border-left-color: #0284c7; background-color: rgba(2,132,199,0.06); }
+.md-typeset h3.rx-card.mra   { border-left-color: #ca8a04; background-color: rgba(202,138,4,0.07); }
+.md-typeset h3.rx-card.sglt2 { border-left-color: #db2777; background-color: rgba(219,39,119,0.06); }
+.md-typeset h3.rx-card.vw-ia { border-left-color: #1e40af; background-color: rgba(30,64,175,0.06); }
+.md-typeset h3.rx-card.vw-ib { border-left-color: #2563eb; background-color: rgba(37,99,235,0.06); }
+.md-typeset h3.rx-card.vw-ic { border-left-color: #3b82f6; background-color: rgba(59,130,246,0.06); }
+.md-typeset h3.rx-card.vw-ii { border-left-color: #ea580c; background-color: rgba(234,88,12,0.06); }
+.md-typeset h3.rx-card.vw-iii{ border-left-color: #15803d; background-color: rgba(21,128,61,0.06); }
+.md-typeset h3.rx-card.vw-iv { border-left-color: #0d9488; background-color: rgba(13,148,136,0.06); }
+.md-typeset h3.rx-card.doac     { border-left-color: #b91c1c; background-color: rgba(185,28,28,0.06); }
+.md-typeset h3.rx-card.warfarin { border-left-color: #7f1d1d; background-color: rgba(127,29,29,0.06); }
+.md-typeset h3.rx-card.heparin  { border-left-color: #be123c; background-color: rgba(190,18,60,0.06); }
+.md-typeset h3.rx-card.antiplt  { border-left-color: #e11d48; background-color: rgba(225,29,72,0.06); }
+
+/* =========================================================
+   2x2 マトリクス（Wet/Dry × Warm/Cold など）
+   使い方: <div class="quad"><div class="q ww">...</div>...</div>
+   ========================================================= */
+.quad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+.quad .q {
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.5rem;
+  border: 2px solid;
+}
+.quad .q h4 {
+  margin: 0 0 0.3em 0 !important;
+  font-size: 0.85rem;
+  padding-left: 0 !important;
+  border-left: none !important;
+}
+.quad .ww { border-color: #ea580c; background-color: rgba(234,88,12,0.08); }   /* Warm-Wet  */
+.quad .cw { border-color: #1e40af; background-color: rgba(30,64,175,0.10); }   /* Cold-Wet  */
+.quad .wd { border-color: #16a34a; background-color: rgba(22,163,74,0.07); }   /* Warm-Dry  */
+.quad .cd { border-color: #6b7280; background-color: rgba(107,114,128,0.10); } /* Cold-Dry  */
+.quad .q .label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* =========================================================
+   "鍵となる数字" ハイライト
+   使い方: <span class="key-num">36時間</span>
+   ========================================================= */
+.key-num {
+  display: inline-block;
+  padding: 0 0.35em;
+  background-color: #fef3c7;
+  border-bottom: 2px solid #f59e0b;
+  font-weight: 700;
+  color: #78350f;
+  border-radius: 0.15em;
+}
+
+/* ダークモードでも視認できるよう調整 */
+[data-md-color-scheme="slate"] .key-num {
+  background-color: rgba(245,158,11,0.18);
+  color: #fde68a;
+  border-bottom-color: #f59e0b;
+}
+[data-md-color-scheme="slate"] .md-typeset h3.rx-card {
+  background-color: rgba(255,255,255,0.04);
+}

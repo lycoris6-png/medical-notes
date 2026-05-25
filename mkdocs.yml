@@ -1,0 +1,93 @@
+site_name: Medical Notes
+site_description: 内科（循環器中心）の臨床メモ。医療従事者向け。
+site_author: Lycor
+site_url: https://lycoris6-png.github.io/medical-notes/
+docs_dir: docs
+
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: ダークモードに切替
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: ライトモードに切替
+  font:
+    text: Noto Sans JP
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.caret
+  - pymdownx.mark
+  - tables
+  - attr_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+plugins:
+  - search:
+      lang:
+        - ja
+        - en
+
+nav:
+  - ホーム: index.md
+  - 循環器:
+      - cardiology/antihypertensives.md
+      - cardiology/antiarrhythmics.md
+      - cardiology/heart-failure.md
+      - cardiology/antithrombotics.md
+  - 感染症:
+      - infectious/antibiotics.md
+  - About:
+      - 免責事項: about/disclaimer.md
+
+repo_url: https://github.com/lycoris6-png/medical-notes
+repo_name: lycoris6-png/medical-notes
+edit_uri: edit/main/docs/
