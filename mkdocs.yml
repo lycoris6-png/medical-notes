@@ -79,6 +79,7 @@ plugins:
 nav:
   - ホーム: index.md
   - 循環器:
+      - cardiology/ami.md
       - cardiology/antihypertensives.md
       - cardiology/antiarrhythmics.md
       - cardiology/heart-failure.md
