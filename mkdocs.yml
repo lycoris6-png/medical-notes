@@ -86,6 +86,8 @@ nav:
       - cardiology/antithrombotics.md
   - 感染症:
       - infectious/antibiotics.md
+  - 総合・全身管理:
+      - general/skin-topical.md
   - About:
       - 免責事項: about/disclaimer.md
 
